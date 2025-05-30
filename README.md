@@ -47,8 +47,26 @@ A simple Python project with CI/CD
     ```bash
     pipx install hatchling
     ```
-    
+
     Build the project using `uv`:
     ```bash
     uv build
+    ```
+
+
+## Test CI Pipeline using Docker
+1. Build the Docker image
+    Build the Docker image using the provided Dockerfile:
+    ```bash
+    docker build -t python-cicd:0.1.0 .
+    ```
+
+2. Run the Docker container
+    Run the Docker container to test the CI pipeline:
+    ```bash
+    docker run --rm -it python-cicd:0.1.0
+    ```
+
+    ```bash
+    docker-compose run --rm ci bash
     ```
